@@ -1,0 +1,139 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <h2>Upload an image for prediction</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload and Predict</button>
+    </form>
+</body>
+</html>
+-->
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Desease Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            /* Background gradient or color */
+            background: linear-gradient(to bottom right, #f0f0f0, #c0c0c0);
+            /* Fallback color if gradients are not supported */
+            background-color: #f0f0f0;
+            /* Ensures the gradient covers the entire viewport */
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .upload-container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative; /* Ensure relative positioning for absolute logo */
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .column {
+            flex-basis: 30%;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-caption {
+            font-style: italic;
+            text-align: center; /* Adjust as per your layout */
+            margin-top: 5px; /* Example margin */
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <div class="columns">
+        <img class="logo" src="{% static 'images/ihene_logo.png' %}" alt="Logo">
+        <div class="image-caption">
+            <br>
+        Ihene.AI
+        </div>
+        </div>
+        <h2>Medical Desease Detection</h2>
+        <div class="columns">
+            <div class="column">
+                <div class="image-caption">
+                   COVID 19
+                </div>
+                <img src="{% static 'images/covid19_256.png' %}" alt="Covid19">
+            </div>
+            <div class="column">
+                <div class="image-caption">
+                   Tuberculosis
+                </div>
+                <img src="{% static 'images/tuberculosis_256.png' %}" alt="tuberculosis">
+            </div>
+            <div class="column">
+                <div class="image-caption">
+                   Viral Pneumonia
+                </div>
+                <img src="{% static 'images/v_n_256.jpeg' %}" alt="viral pneumonia">
+            </div>
+        </div>
+        <h4>Upload a chest Xray image for desease detection</h4>
+
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit">Upload and Predict</button>
+        </form>
+        <br><hr>
+    <div><small>Norrsken House Kigali. KN 78 St, +250 788-317-992, rukuprince@gmail.com, https://www.ihenegoat.tech</small>
+</body>
+</html>

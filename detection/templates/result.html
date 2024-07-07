@@ -1,0 +1,140 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <p>Image: {{ image_name }}</p>
+    <p>Predicted Class: {{ predicted_class }}</p>
+    <p>Confidence: {{ confidence|floatformat:2 }}</p>
+    <a href="{% url 'upload_image' %}">Upload another image</a>
+</body>
+</html>
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background: linear-gradient(to bottom right, #f0f0f0, #c0c0c0);
+            background-color: #f0f0f0;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .header img {
+            max-width: 50px; /* Adjust the size of your logo */
+            margin-right: 20px;
+        }
+        .result-container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .logo {
+            flex: 0 0 auto; /* Don't grow or shrink, maintain initial size */
+            margin-right: 10px;
+        }
+        .title {
+            flex: 1 1 auto; /* Grow to fill remaining space */
+        }
+        .link {
+            flex: 0 0 auto; /* Don't grow or shrink */
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <div class="logo">
+        <img src="{% static 'images/ihene_logo.png' %}" alt="Logo" width="50">
+    </div>
+    <div class="title">
+        <h2>Disease Detection Result</h2>
+    </div>
+    <div class="link">
+        <a href="{% url 'upload_image' %}">Upload another image</a>
+    </div>
+    </div>
+    <div class="result-container">
+        <h4>Covid 19 | Tuberculosis | Viral Pneumonia</h4>
+        
+        {% if image_name %}
+            <p>Image: {{ image_name }}</p>
+        {% endif %}
+        {% if predicted_class %}
+            <p>Predicted Class: {{ predicted_class }}</p>
+        {% endif %}
+        {% if confidence %}
+            <p>Confidence: {{ confidence|floatformat:2 }}</p>
+        {% endif %}
+        
+        {% if plot_img %}
+            <!-- Embedding the plot image -->
+            <div>
+                <img src="{{ plot_img }}" alt="Class Probabilities">
+            </div>
+        {% endif %}
+        
+        <br>
+        
+        <small>Norrsken House Kigali. KN 78 St, +250 788-317-992, rukuprince@gmail.com, https://www.ihenegoat.tech</small>
+    </div>
+</body>
+</html>
