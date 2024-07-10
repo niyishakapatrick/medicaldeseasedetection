@@ -7,6 +7,9 @@ import torch.nn as nn
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Create two columns
+col1, col2 = st.columns([1, 3])
+
 # Function to load and predict image
 def predict_single_image(image_path, model_path, class_names):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -43,7 +46,13 @@ def predict_single_image(image_path, model_path, class_names):
 
 # Define the Streamlit app
 def main():
-    st.title('Medical Disease Detection from Chest X-ray')
+    # Column 1: Logo
+    with col1:
+        logo = 'AQS.png'  # Replace with the path to your logo file
+        st.image(logo, width=150)  # Adjust width as needed
+    # Column 2: Title and Description
+    with col2:
+        st.markdown("### Medical Disease Detection from Chest X-ray")
     st.markdown("Detects COVID-19, Tuberculosis, and Viral Pneumonia")
 
     # Upload image
