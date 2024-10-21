@@ -76,7 +76,7 @@ def main():
         for bar, prob in zip(bars, probabilities):
             ax.text(bar.get_width() - 0.05, bar.get_y() + bar.get_height(), 
                     f'{prob * 100:.1f}%', va='center', ha='right', 
-                    color='white', fontsize=14, fontweight='bold')  # Increased fontsize
+                    color='black', fontsize=14, fontweight='bold')  # Increased fontsize
 
         ax.set_xlabel('Probability')
         ax.set_title('Probabilities')
