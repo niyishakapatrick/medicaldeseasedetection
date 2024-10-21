@@ -73,7 +73,6 @@ def main():
         colors = ['blue', 'green', 'orange', 'red']
         bars = ax.barh(class_names, probabilities, color=colors)
 
-
         for bar, prob in zip(bars, probabilities):
             ax.text(bar.get_width() - 0.05, bar.get_y() + bar.get_height() / 2, 
                     f'{prob * 100:.1f}%', va='center', ha='right', 
@@ -81,6 +80,7 @@ def main():
 
         ax.set_xlabel('Probability')
         ax.set_title('Probabilities')
+        ax.set_yticklabels(ax.get_yticklabels(), fontsize=12)  
         ax.set_xlim(0, 1.0)
         ax.grid(True)  # Add grid
         st.pyplot(fig, dpi=300)  # Increase DPI for clarity
