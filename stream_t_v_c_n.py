@@ -86,7 +86,7 @@ def main():
         st.pyplot(fig, dpi=300)  # Increase DPI for clarity
 
     st.markdown("<small style='color: lightblue;'><hr></small>", unsafe_allow_html=True)
-    st.markdown("<small style='color: darkblue;'>Keeza ~ Tech | +250788384528 | keey08@gmail.com |Noorsken - Kigali - Rwanda</small>", unsafe_allow_html=True)
+    st.markdown("<small style='color: darkblue;'>Keeza ~ Tech | +250788384528,+250788317992,+250785540835 | keey08@gmail.com |Noorsken - Kigali - Rwanda</small>", unsafe_allow_html=True)
 
     st.markdown(
         """
