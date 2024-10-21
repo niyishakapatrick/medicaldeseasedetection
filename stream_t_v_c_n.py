@@ -74,7 +74,7 @@ def main():
         bars = ax.barh(class_names, probabilities, color=colors)
 
         for bar, prob in zip(bars, probabilities):
-            ax.text(bar.get_width() - 0.05, bar.get_y() + bar.get_height() / 2, 
+            ax.text(bar.get_width() - 0.05, bar.get_y() + bar.get_height(), 
                     f'{prob * 100:.1f}%', va='center', ha='right', 
                     color='white', fontsize=14, fontweight='bold')  # Increased fontsize
 
