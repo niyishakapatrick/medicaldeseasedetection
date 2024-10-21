@@ -52,7 +52,43 @@ def main():
         st.image(logo, width=200)  # Adjust width as needed
     # Column 2: Title and Description
     with col2:
-        st.markdown("<h4 style="color: black;">COVID-19,Tuberculosis  Viral Pneumonia diagnosis from Chest X-ray </h4>")
+
+        st.markdown(
+            """
+            <style>
+            body {
+                background-color: white;    /* White background */
+                color: darkblue;                /* Blue text */
+            }
+            .css-1aumxhk {
+                background-color: white;    /* White header background */
+                padding: 20px;
+                border: 2px black;      /* Blue border */
+                border-radius: 8px;
+            }
+            h2 {
+                color: blue;                /* Blue text for headings */
+            }
+            .stButton>button {
+                background-color: #f0f0f0; /* Light gray button */
+                color: blue;               /* Button text color */
+                border: 2px black;    /* Blue border for button */
+            }
+            .stImage {
+                border-radius: 8px;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+            )
+        st.markdown(
+            """
+            <div class="css-1aumxhk">
+            <h4 style="color: black;"> COVID-19,Tuberculosis  Viral Pneumonia diagnosis from Chest X-ray</h4>
+            </div>
+            """,
+            unsafe_allow_html=True
+            )
     st.warning("Detects COVID-19, Tuberculosis, and Viral Pneumonia")
 
     # Upload image
