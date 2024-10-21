@@ -73,15 +73,17 @@ def main():
         colors = ['blue', 'green', 'orange', 'red']
         bars = ax.barh(class_names, probabilities, color=colors)
 
+
         for bar, prob in zip(bars, probabilities):
-            ax.text(bar.get_width() - 0.1, bar.get_y() + bar.get_height()/2, f'{prob*100:.1f}%', 
-                    va='center', ha='right', color='white', fontsize=12, fontweight='bold')  # Make text bold
+            ax.text(bar.get_width() - 0.05, bar.get_y() + bar.get_height() / 2, 
+                    f'{prob * 100:.1f}%', va='center', ha='right', 
+                    color='white', fontsize=14, fontweight='bold')  # Increased fontsize
 
         ax.set_xlabel('Probability')
         ax.set_title('Probabilities')
         ax.set_xlim(0, 1.0)
         ax.grid(True)  # Add grid
-        st.pyplot(fig)
+        st.pyplot(fig, dpi=300)  # Increase DPI for clarity
 
     st.markdown("<small style='color: lightblue;'><hr></small>", unsafe_allow_html=True)
     st.markdown("<small style='color: darkblue;'>Keeza ~ Tech | +250788384528 | keey08@gmail.com |Noorsken - Kigali - Rwanda</small>", unsafe_allow_html=True)
