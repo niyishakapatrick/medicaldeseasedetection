@@ -52,8 +52,8 @@ def main():
         st.image(logo, width=200)  # Adjust width as needed
     # Column 2: Title and Description
     with col2:
-        st.markdown("### Medical Disease Detection from Chest X-ray")
-    st.info("Detects COVID-19, Tuberculosis, and Viral Pneumonia")
+        st.markdown("<h4 style="color: black;">COVID-19,Tuberculosis  Viral Pneumonia diagnosis from Chest X-ray </h4>")
+    st.warning("Detects COVID-19, Tuberculosis, and Viral Pneumonia")
 
     # Upload image
     uploaded_file = st.file_uploader("Choose an image...",  type=["jpg", "jpeg", "png"])
