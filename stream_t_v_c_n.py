@@ -49,14 +49,14 @@ def main():
     # Column 1: Logo
     with col1:
         logo = 'AQS.png'  # Replace with the path to your logo file
-        st.image(logo, width=150)  # Adjust width as needed
+        st.image(logo, width=200)  # Adjust width as needed
     # Column 2: Title and Description
     with col2:
         st.markdown("### Medical Disease Detection from Chest X-ray")
-    st.markdown("Detects COVID-19, Tuberculosis, and Viral Pneumonia")
+    st.info("Detects COVID-19, Tuberculosis, and Viral Pneumonia")
 
     # Upload image
-    uploaded_file = st.file_uploader("Choose an image...", type="png")
+    uploaded_file = st.file_uploader("Choose an image...",  type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         # Display uploaded image
@@ -84,6 +84,21 @@ def main():
         ax.set_xlim(0, 1.0)
         ax.grid(True)  # Add grid
         st.pyplot(fig)
+
+    st.markdown("<small style='color: lightblue;'><hr></small>", unsafe_allow_html=True)
+    st.markdown("<small style='color: darkblue;'>Keeza ~ Tech | +250788384528 | keey08@gmail.com |Noorsken - Kigali - Rwanda</small>", unsafe_allow_html=True)
+
+    st.markdown(
+        """
+        <script>
+        setInterval(function() {
+            fetch('/stream');
+        }, 60000);  // Ping the server every minute
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 # Run the app
 if __name__ == '__main__':
