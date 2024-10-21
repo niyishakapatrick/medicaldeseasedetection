@@ -51,7 +51,7 @@ def main():
         logo = 'AQS.png'  # Replace with the path to your logo file
         st.image(logo, width=200)  # Adjust width as needed
     # Column 2: Title and Description
-    st.warning("#### Detects COVID-19, Tuberculosis, and Viral Pneumonia")
+    st.warning("COVID-19, Tuberculosis, and Viral Pneumonia from Chest X-ray Images")
 
     # Upload image
     uploaded_file = st.file_uploader("Choose an image...",  type=["jpg", "jpeg", "png"])
